@@ -4,7 +4,7 @@ FROM delitescere/jdk:latest
 #ENV GO_VERSION=16.5.0-3305
 ENV GO_VERSION=16.6.0-3590
 MAINTAINER GoCD <go-cd-dev@googlegroups.com>
-RUN env && cat ./hook.txt
+RUN env && cat hook.txt
 # GoCD scripts used here work with ash -- bash not needed.  Only git support is bundled.
 RUN apk --no-cache add git
 
