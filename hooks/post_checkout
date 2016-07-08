@@ -2,9 +2,9 @@
 echo $0 $@
 env
 ps -ef
-env >hook.txt
 ls -alh /stage
 cat /stage/builder.py
+which erb
 pwd
 # exit 1
 #
