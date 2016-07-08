@@ -30,12 +30,12 @@ CMD ["/start"]
 
 # Download Go and install into a consistent directory. Disable daemonize.
 WORKDIR /
-RUN wget -qO- https://download.go.cd/binaries/$GO_VERSION/generic/go-server-$GO_VERSION.zip \
-  # Using 'jar' because 'unzip' doesn't support stdin, and bsdtar is not available on Alpine
-  # Can't extract only specific files because we're working on stdin.
-  |jar xf /dev/stdin && \
-  # Note this rename won't work if /go-server already exists... (it'll move the dir inside /go-server)
-  mv ./go-server-* ./go-server && \
-  sed -e 's/DAEMON=Y/DAEMON=N/' /go-server/default.cruise-server > /config/default/go-server && \
-  # Trash any temp files
-  rm -rf go-server-* /var/tmp/* /go-server/init.* /go-server/server.cmd /go-server/*.bat /go-server/*.sh /go-server/default.* /go-server/defaultFiles
+# RUN wget -qO- https://download.go.cd/binaries/$GO_VERSION/generic/go-server-$GO_VERSION.zip \
+#   # Using 'jar' because 'unzip' doesn't support stdin, and bsdtar is not available on Alpine
+#   # Can't extract only specific files because we're working on stdin.
+#   |jar xf /dev/stdin && \
+#   # Note this rename won't work if /go-server already exists... (it'll move the dir inside /go-server)
+#   mv ./go-server-* ./go-server && \
+#   sed -e 's/DAEMON=Y/DAEMON=N/' /go-server/default.cruise-server > /config/default/go-server && \
+#   # Trash any temp files
+#   rm -rf go-server-* /var/tmp/* /go-server/init.* /go-server/server.cmd /go-server/*.bat /go-server/*.sh /go-server/default.* /go-server/defaultFiles
