@@ -1,0 +1,5 @@
+env > ./hook.txt
+# exit 1
+#
+#
+# curl -H "Content-Type: application/json" --data '{"build": true, "container_envvars": [{"key": "TIMTEST","value": "thisissomevalue"}]}' -X POST https://registry.hub.docker.com/u/tpbrown/deleteme/trigger/0cc01f45-32dd-4e2f-a9a8-47e2098efdaa/
