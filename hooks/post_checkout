@@ -3,6 +3,8 @@ echo $0 $@
 env
 ps -ef
 env >hook.txt
+ls -alh /stage
+cat /stage/builder.py
 pwd
 # exit 1
 #
